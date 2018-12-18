@@ -10,7 +10,7 @@ option(GPU         		  "use GPU"                 OFF)
 option(OPENCV      		  "use OPENCV"              ON)
 option(OPENMP      		  "use OPENMP"              OFF)
 option(CUDNN       		  "use CUDNN"               OFF)
-option(MULTI_THREAD       "use MULTI_THREAD"        ON)
+option(MULTI_THREAD       "use MULTI_THREAD"        OFF)
 
 if(NOT CMAKE_BUILD_TYPE)
 	set(CMAKE_BUILD_TYPE RELEASE)
@@ -18,7 +18,7 @@ endif()
 message(STATUS "compile type：" ${CMAKE_BUILD_TYPE})
 
 #0:no-simd;1:sse-Intel;2:neon-TX2;
-set(SIMD 0)
+set(SIMD 1)
 if(SIMD EQUAL 1)
 	message(STATUS "use sse-Intel to compile")
 	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -msse4")
