@@ -901,7 +901,8 @@ void ECO::init_features()
 
 		std::string s;
 		std::string path = params_.cn_features.fparams.tablename;
-		ifstream *read = new ifstream(path);
+        //ifstream *read = new ifstream(path);
+        istringstream *read = new istringstream(path);
 		size_t rows = sizeof(params_.cn_features.fparams.table) / sizeof(params_.cn_features.fparams.table[0]);
 		size_t cols = sizeof(params_.cn_features.fparams.table[0]) / sizeof(float);
 		//debug("rows:%lu,cols:%lu", rows, cols);
